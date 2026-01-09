@@ -3,14 +3,25 @@ import ExpenseDate from './components/ExpenseDate'
 import ExpenseItem from './components/Expenseitem'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const expenses = [
+  {
+    date: new Date(2026, 1, 9),
+    title: 'Car Insurance',
+    price: 294.67
+  },
+  {
+    date: new Date(2025, 5, 12),
+    title: 'New Desk (Wooden)',
+    price: 450
+  }  
+  ];
 
   return (
-    <>
-      <ExpenseDate date={new Date(2022, 2, 28)} />
-      <ExpenseItem />
-    </>
+    <div className='App'>
+      <ExpenseItem data={expenses[0]} />
+      <ExpenseItem data={expenses[1]} />
+    </div>
   )
 }
 
-export default App
+export default App;
