@@ -6,6 +6,7 @@ const ExpenseItem = (props) => {
     console.log(props.data.date);
     
     return (
+
         <div className="expense-item">
             <ExpenseDate date={props.data.date} />
             <div>{props.data.date.toString()}</div>

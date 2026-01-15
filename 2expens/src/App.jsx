@@ -1,6 +1,7 @@
 import './App.css'
 import ExpenseDate from './components/ExpenseDate'
 import ExpenseItem from './components/Expenseitem'
+import Expenses from './components/Expenses'
 
 function App() {
   const expenses = [
@@ -18,8 +19,10 @@ function App() {
 
   return (
     <div className='App'>
-      <ExpenseItem data={expenses[0]} />
-      <ExpenseItem data={expenses[1]} />
+      <Expenses>
+        <ExpenseItem data={expenses[0]} />
+        <ExpenseItem data={expenses[1]} />
+      </Expenses>
     </div>
   )
 }
