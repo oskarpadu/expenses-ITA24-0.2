@@ -1,7 +1,7 @@
 import './App.css'
-import ExpenseDate from './components/ExpenseDate'
-import ExpenseItem from './components/Expenseitem'
-import Expenses from './components/Expenses'
+import ExpenseDate from './components/Expenses/ExpenseDate'
+import ExpenseItem from './components/Expenses/Expenseitem'
+import Expenses from './components/Expenses/Expenses'
 
 function App() {
   const expenses = [
