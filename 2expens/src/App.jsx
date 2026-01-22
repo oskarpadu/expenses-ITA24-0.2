@@ -2,6 +2,7 @@ import './App.css'
 import ExpenseDate from './components/Expenses/ExpenseDate'
 import ExpenseItem from './components/Expenses/Expenseitem'
 import Expenses from './components/Expenses/Expenses'
+import NewExpense from './components/NewExpense/NewExpense.jsx'
 
 function App() {
   const expenses = [
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className='App'>
+      <NewExpense />
       <Expenses>
         <ExpenseItem data={expenses[0]} />
         <ExpenseItem data={expenses[1]} />
