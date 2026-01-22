@@ -1,9 +1,10 @@
 import ExpenseDate from '../Expenses/ExpenseDate.jsx';
 import '../Expenses/Expenseitem.css';
 import Card from '../ui/Card.jsx';
+import { useState } from 'react';
 
 const ExpenseItem = (props) => {
-    const [title, setTitle] = useState(props.expensedata.title);
+    const [title, setTitle] = useState(props.data.title);
 
     const clickHandler = () => {
         console.log('Clicked!');
