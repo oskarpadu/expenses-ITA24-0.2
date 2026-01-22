@@ -33,14 +33,16 @@ const ExpenseForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         const expenseData = {
-            title: enteredTitle,
-            amount: +enteredPrice,
-            date: new Date(enteredDate)
+            title: userInput.enteredTitle,
+            amount: +userInput.enteredPrice,
+            date: new Date(userInput.enteredDate)
         };
         props.onSaveExpenseData(expenseData);
-        setEnteredTitle('');
-        setEnteredPrice('');
-        setEnteredDate('');
+        setUserInput({
+            enteredTitle: '',
+            enteredPrice: '',
+            enteredDate: ''
+        });
     };
 
 
@@ -49,15 +51,15 @@ const ExpenseForm = (props) => {
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
-                    <input type='text' onChange={titleChangeHandler} value={enteredTitle}/>
+                    <input type='text' onChange={titleChangeHandler} value={userInput.enteredTitle}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Amount</label>
-                    <input type='number' min='0.01' step='0.01' onChange={priceChangeHandler}/>
+                    <input type='number' min='0.01' step='0.01' onChange={priceChangeHandler} value={userInput.enteredPrice}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' min='2019-01-01' max='2022-12-31' onChange={dateChangeHandler}/>
+                    <input type='date' min='2000-01-01' max='2028-12-31' onChange={dateChangeHandler} value={userInput.enteredDate}/>
                 </div>
             </div>
             <div className='new-expense__actions'>
