@@ -8,13 +8,16 @@ const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2026');
 
   const filterChangeHandler = (selectedYear) => {
-    console.log('Expenses.jsx');
     setFilteredYear(selectedYear);
   };
+
+console.log('Valitud aasta:', filteredYear);
 
   const filteredExpenses = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
+
+  console.log ('Filtreeritud kulud:', filteredExpenses);
 
   return (
 
