@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../Expenses/Expenses.css';
 import Card from '../ui/Card.jsx';
 import ExpensesFilter from './ExpensesFilter.jsx';
 import ExpenseItem from './Expenseitem.jsx';
+import ExpensesList from './ExpensesList.jsx';
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2023');
@@ -11,13 +12,9 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
-console.log('Valitud aasta:', filteredYear);
-
   const filteredExpenses = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
-
-  console.log ('Filtreeritud kulud:', filteredExpenses);
 
   let expensesContent = <p>No expenses found.</p>;
 
@@ -32,7 +29,7 @@ console.log('Valitud aasta:', filteredYear);
 
     <Card className="expenses">
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-      {expensesContent} 
+      <ExpensesList expenses={filteredExpenses} />  
     </Card>
   );
 }

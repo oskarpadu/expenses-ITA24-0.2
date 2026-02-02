@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import ExpenseDate from './components/Expenses/ExpenseDate'
-import ExpenseItem from './components/Expenses/Expenseitem'
 import Expenses from './components/Expenses/Expenses'
 import NewExpense from './components/NewExpense/NewExpense.jsx'
 
